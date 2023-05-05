@@ -1,7 +1,10 @@
+import UploadContainer from '@/components/UploadContainer';
+
 export default function Home() {
     return (
-        <main className="">
-            Ooh! What's this?
+        <main className="container mx-auto max-w-3xl">
+            <h1></h1>
+            <UploadContainer />
         </main>
     );
 }
