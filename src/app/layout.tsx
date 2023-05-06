@@ -20,7 +20,7 @@ export default function RootLayout({
                 <nav className="flex items-center gap-4 w-full h-16 border-b border-b-[#232930] px-4">
                     LogPasta
                     <span className="flex-grow" />
-                    <a href="/" className="bg-[#3571fe] p-2 border-b-2 border-b-[#034bc8] rounded ">Upload New</a>
+                    <a href="/" className="bg-[#3571fe] p-2 border-b-2 border-b-[#034bc8] rounded ">New Upload</a>
                     <a href="https://github.com/AppleFlavored/logpasta"><BsGithub className="w-7 h-7" /></a>
                 </nav>
                 {children}
