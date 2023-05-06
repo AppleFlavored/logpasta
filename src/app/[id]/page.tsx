@@ -30,9 +30,7 @@ export default async function ViewerPage(
                     </h1>
                     <p>Uploaded {document.createdAt.toLocaleString()}</p>
                 </div>
-                <textarea readOnly className="bg-[#1b2028] w-full mt-8 outline-none resize-none font-mono text-sm">
-                    {document.source}
-                </textarea>
+                <textarea readOnly className="bg-[#1b2028] w-full mt-8 outline-none resize-none font-mono text-sm" value={document.source} />
             </div>
         </Suspense>
     );
