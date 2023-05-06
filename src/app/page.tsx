@@ -5,7 +5,6 @@ export default function Home() {
     return (
         <>
             <div className="container mx-auto max-w-3xl mt-16">
-                <h1></h1>
                 <UploadContainer />
             </div>
             <div className="container mx-auto grid grid-cols-3 gap-16 max-w-4xl mt-16">
