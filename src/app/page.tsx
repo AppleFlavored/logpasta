@@ -6,6 +6,7 @@ export default function Home() {
         <>
             <div className="container mx-auto max-w-3xl mt-16">
                 <UploadContainer />
+                <p className="text-center text-[#3f4d5a] text-sm mt-2">(Max file size: 5 MB)</p>
             </div>
             <div className="container mx-auto grid grid-cols-3 gap-16 max-w-4xl mt-16">
                 <div className="text-center">
