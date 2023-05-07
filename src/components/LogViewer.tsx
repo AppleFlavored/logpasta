@@ -29,26 +29,19 @@ const getLineStyleProps = (severity: string | undefined): LineProps => {
 function useLineStyles(source: string) {
     return useMemo(() => {
         let lastSeverity: string | undefined;
-        const elements = source.split('\n').map(line => {
+        const elements = source.split('\n').map((line, i) => {
             const timeMatch = line.match(/^\[.*\]/);
-            if (!timeMatch) {
-                return <span {...getLineStyleProps(lastSeverity)}>{line}{'\n'}</span>;
-            }
-
             const severityMatch = line.match(/\[.+\/([A-Z]+)\]:/);
-            if (!severityMatch) {
-                return <span {...getLineStyleProps(lastSeverity)}>{line}{'\n'}</span>;
-            }
 
-            return (
-                <>
-                    <span {...getLineStyleProps(lastSeverity = severityMatch[1])}>{line}</span>{'\n'}
-                </>
-            );
+            if (!timeMatch || !severityMatch) {
+                return <span key={i} {...getLineStyleProps(lastSeverity)}>{line}</span>;
+            }
+            
+            return <span key={i} {...getLineStyleProps(lastSeverity = severityMatch[1])}>{line}</span>;
         });
 
         return elements;
-    }, [source])
+    }, [source]);
 }
 
 export default function LogViewer({ source }: LogViewerProps) {
