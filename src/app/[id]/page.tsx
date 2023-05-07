@@ -1,6 +1,7 @@
 import { prisma } from "@/server/db";
 import { Suspense, useState } from "react";
 import ViewerLoading from "./loading";
+import LogViewer from "@/components/LogViewer";
 
 type PageParams = {
     id: string,
@@ -30,12 +31,7 @@ export default async function ViewerPage(
                     </h1>
                     <p>Uploaded {document.createdAt.toLocaleString()}</p>
                 </div>
-                <pre className="mt-8 font-mono text-sm whitespace-pre-wrap">
-                    <code>
-                        {document.source}
-                    </code>
-                </pre>
-                {/* <textarea readOnly className="bg-[#1b2028] w-full h-96 mt-8 outline-none resize-none font-mono text-sm" value= /> */}
+                <LogViewer source={document.source} />
             </div>
             <footer className="flex flex-col items-center mt-16 border-t border-t-[#232930] py-2 text-[#3f4d5a]">
                 <p className="text-sm">This log will be saved for 30 days since upload.</p>
