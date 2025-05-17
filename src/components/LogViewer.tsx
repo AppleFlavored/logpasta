@@ -34,10 +34,10 @@ function useLineStyles(source: string) {
             const severityMatch = line.match(/\[.+\/([A-Z]+)\]:/);
 
             if (!timeMatch || !severityMatch) {
-                return <span key={i} {...getLineStyleProps(lastSeverity)}>{line}</span>;
+                return <div key={i} {...getLineStyleProps(lastSeverity)}>{line}</div>;
             }
             
-            return <span key={i} {...getLineStyleProps(lastSeverity = severityMatch[1])}>{line}</span>;
+            return <div key={i} {...getLineStyleProps(lastSeverity = severityMatch[1])}>{line}</div>;
         });
 
         return elements;
